@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from .form import ClientForm, PostForm
 from django.views.generic.edit import CreateView
-from .models import Client, Post
+from .models import *
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView
 
@@ -51,3 +51,23 @@ def index(request):
     
 def thanks(request):
     return render(request, "thanks.html")
+
+
+def DepartementViews(request):
+
+    info = Departament.objects.all()
+    doctor = Doctor.objects.all()
+    context = {
+        'info': info,
+        'doc': doctor,
+    }
+    return render(request, 'info/info.html', context)
+
+def det_view(request, pk):
+    info = Departament.objects.all().filter(id = pk)
+    doctor = Doctor.objects.all().filter(id=pk)
+    context = {
+        'info': info,
+        'doc': doctor,
+    }
+    return render(request, 'info/info_det.html', context)

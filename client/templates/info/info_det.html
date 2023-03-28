@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Отделении{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+<div class="col-md-2">
+    {% for i in info %}
+    <p class="fs-5 m-0 border rounded p-2 m-1"><a class="text-decoration-none fw-bold" href="">{{i.name}}</a></p>
+    {% endfor %}
+</div>
+
+<div class="col-md-10">
+    <a class="text-decoration-none fw-bold fw-bold fs-4" href="{% url 'departament' %}">Назад</a>
+    {% for i in info %}
+    <p class="display-5">{{i.name}}</p>
+    {% if object.photo %}
+    <img class="card-img-top" src="{{ object.photo.url }}" alt="{{ object.title }}">
+    {% endif %}
+    {{i.info|safe}}
+    {% endfor %}
+
+    <h3>Наши врачи</h3>
+    
+    {% for el in doc %}
+        <h4>{{el.name}}</h4>
+        <img src="{{ el.img.url }}" alt="i.name">
+    {% endfor %}
+    
+    
+</div>
+</div>
+
+{% endblock %}

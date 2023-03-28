@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Region, Doctor, Client
+from .models import Post, Region, Doctor, Client, Departament
 
 # Register your models here.
 class RegionAdmin(admin.ModelAdmin):
@@ -8,9 +8,13 @@ class RegionAdmin(admin.ModelAdmin):
 class DoctorAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
+class DepartamentAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
+
 admin.site.register(Region, RegionAdmin)
 admin.site.register(Doctor, DoctorAdmin)
 admin.site.register(Client)
+admin.site.register(Departament, DepartamentAdmin)
 
 
 admin.site.register(Post)

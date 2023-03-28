@@ -22,9 +22,9 @@ class Client(models.Model):
     def __str__(self) -> str:
         return self.name
 
-    # def get_absolute_url(self):
-    #     success_url = reverse_lazy("otvet.html")
-
+    class Meta:
+        verbose_name = "Клиент"
+        verbose_name_plural = "Клиент"
 
 class Region(models.Model):
     title = models.CharField(max_length=250)
@@ -33,19 +33,44 @@ class Region(models.Model):
     def __str__(self) -> str:
         return self.title
 
+    class Meta:
+        verbose_name = "Регион"
+        verbose_name_plural = "Регион"
 
 class Doctor(models.Model):
+    department = models.ForeignKey("Departament", on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
     slug = models.SlugField(unique=True, help_text='Поля автоматический заполняется!')
+    img = models.ImageField(upload_to='media/photo_doc')
 
     def __str__(self) -> str:
         return self.name
-
+    
+    class Meta:
+        verbose_name = "Врачи"
+        verbose_name_plural = "Врачи"
 
 class Post(models.Model):
     title = models.CharField(max_length=255, verbose_name='Тема поста')
-    # body = models.TextField()
     body = RichTextUploadingField(verbose_name='Пост:')  # CKEditor Rich Text Field
 
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = "Новости"
+        verbose_name_plural = "Новости"
+
+class Departament(models.Model):
+    region = models.ForeignKey(Region, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    slug = models.SlugField(help_text="Поля автоматически заполняется: ")
+    info = RichTextUploadingField(verbose_name="Информация по отделении: ")
+    
+    def __str__(self) -> str:
+        return self.name
+    
+    class Meta:
+        verbose_name = "Отделение"
+        verbose_name_plural = "Отделении"
+
