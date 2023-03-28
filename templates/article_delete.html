@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <center><h1 class="">Удалить</h1></center>
+    <form class="form" method="post" enctype="multipard/form-data">
+        {% csrf_token %}
+        <p class="">"{{ article.title }}" Хотите удалить этого поста</p>
+        <button class="btn btn-info ml-2">Да</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}Добавить новости{% endblock %}
+
+{% block content %}    
+<br>
+    <form method="post" class="foooor">
+        {% csrf_token %}
+    <div class="form-outline" >
+        {{form.as_p}}
+        <br>
+    </div>  
+    <!--Blog Text Area-->
+        {{form.media}}
+        <input class="btn btn-warning" type="submit">
+    </form>
+{% endblock %}
+

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}доктор{% endblock %}
+
+{% block content %}
+
+    {% for h in jav %}
+    
+
+
+    <label for="">В очеред</label>
+    <h5>{{ h.id }}</h5>
+    <div class="form-control form">
+        <label for="">Имя</label>
+        <h3>{{ h.name }}</h3>
+        <label for="">Фамилия</label>
+        <h3>{{ h.sourname }}</h3>
+        <label for="">Телефон</label>
+        <h4>{{ h.phone }}</h4>
+        <label for="">Регион</label>
+        <h4>{{ h.region }}</h4>
+        <label for="">Врач</label>
+        <h4>{{ h.doctor }}</h4>
+        <label for="">Дата</label>
+        <h4>{{ h.date }}</h4> 
+        <label for="">Время</label>
+        <h4>{{ h.time }}</h4> 
+    </div>
+
+    {% endfor %}
+
+
+
+{% endblock %}

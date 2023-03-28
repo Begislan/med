@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <center><h1 class="">Изменить</h1></center>
+    <form class="form" method="post" enctype="multipard/form-data">
+        {% csrf_token %}
+        {{form.media}}
+        {{ form|crispy }}
+        <button class="btn btn-info ml-2">Сохранить</button>
+    </form>
+{% endblock %}

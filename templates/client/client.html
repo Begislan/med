@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}Client{% endblock %}
+
+{% block content %}
+<br>
+<main class="px-3" style=" background: #b18a8a; border-radius: 20px;">
+  <h1>Это основная страница, для сотрудника</h1>
+  <p class="lead">Постмотреть очеред</p>
+  <p class="lead">
+    <a href="{% url 'doctor' %}" class="btn btn-lg btn-light fw-bold border-white bg-white">Посмотреть</a>
+  </p>
+</main>
+
+<center>
+  <h2 class="display-4" style="border-bottom: 5px solid rgb(128, 78, 78);">Посты для сотрудников</h2>
+  {% for post in posts %}
+  <h2>{{ post.title }}</h2>
+  <p class="ppp">{{ post.body|safe }}</p>
+  <div style="width: 100%; height: 2px; background: #000;"></span>
+{% endfor %}
+</center>
+{% endblock %}

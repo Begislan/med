@@ -1,0 +1,42 @@
+body{
+    background-image: url(https://img.freepik.com/free-photo/abstract-luxury-blur-dark-grey-and-black-gradient-used-as-background-studio-wall-for-display-your-products_1258-63997.jpg?w=996&t=st=1677657594~exp=1677658194~hmac=ca9016415d8dba8b4eeded910ac1f7404ec5825561026004a07cae49d9f9daa4);
+    background-size: cover;
+}
+.jumbotron{
+    background: rgb(192, 189, 189);
+    padding: 20px;
+    border-radius: 20px;
+}
+.aaa{
+    color: rgb(161, 89, 89);
+    text-decoration: none;
+}
+
+.form{
+    width: 500px;
+    border: 1px solid #808490;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+}
+#id_name,#id_sourname,#id_phone, #id_region, #id_doctor, #id_female, #id_title{
+    border: none;
+    width:100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 4px;
+    font-size: 25px;
+    border: 1px solid rgb(192, 187, 187);
+}
+.blog{
+    background-image: url(https://img.freepik.com/free-vector/healthcare-and-medical-blue-background-banner_1017-20041.jpg?w=826&t=st=1677655113~exp=1677655713~hmac=d75b360dd2bcc9d6229f8fe50da1ff99d0014106881ebcb12241b348f64e3de2);
+    background-size: cover;
+    
+}
+.blokk{
+    background-image: url(https://img.freepik.com/free-vector/medical-blue-backgorund-with-heartbeat-line_1017-30387.jpg?w=900&t=st=1677656221~exp=1677656821~hmac=eeab690aee4c255b6e152049aa429d6ddb399aab7ace987236592b5275002424);
+    background-size: cover; background-size: cover;
+}
+.aaa{
+    text-decoration: none;
+}

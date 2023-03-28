@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+    integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="d-flex h-100 text-center text-bg-dark">
+  <div class="container">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <a style="color: #fff;" href="{% url 'client' %}">
+            <h3 class="float-md-start mb-0">MyDoctor Админка</h3>
+          </a>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a style="margin-right: 5px;" class="btn btn-outline-light" href="{% url 'client' %}">Админ Главная</a>
+            <!-- <a class="btn btn-outline-dark" href="{% url 'new' %}">Клиент</a> -->
+            <a style="margin-right: 5px;" class="btn btn-outline-light" href="{% url 'doctor' %}">Очеред</a>
+            <a style="margin-right: 5px;" class="btn btn-outline-light" href="{% url 'index' %}">Добавить пост</a>
+            <a style="margin-right: 5px;" class="btn btn-warning" href="{% url 'home' %}">На главную</a>
+          </nav>
+        </div>
+      </header>
+      {% block content %}
+      {% endblock %}
+
+      
+
+    </div>
+  </div>
+  <div class="mallbery-caa" style="z-index: 2147483647 !important; text-transform: none !important; position: fixed;">
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+  
+</body>
+
+</html>
