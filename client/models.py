@@ -2,6 +2,8 @@ from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from ckeditor_uploader.fields import RichTextUploadingField
 
+from django.contrib.auth.models import AbstractUser
+
 
 # Create your models here.
 class Client(models.Model):
@@ -39,9 +41,12 @@ class Region(models.Model):
 
 class Doctor(models.Model):
     department = models.ForeignKey("Departament", on_delete=models.CASCADE)
-    name = models.CharField(max_length=250)
+    name = models.CharField(max_length=250, verbose_name="Имя")
+    first_name = models.CharField(max_length=255, verbose_name="Фамилия")
     slug = models.SlugField(unique=True, help_text='Поля автоматический заполняется!')
-    img = models.ImageField(upload_to='media/photo_doc')
+    img = models.ImageField(upload_to='media/photo_doc', verbose_name="Изображение врача: ")
+    experience = models.IntegerField(verbose_name="Стаж: ", blank=True)
+    phone = PhoneNumberField(verbose_name="Телефон номер", default="+996")
 
     def __str__(self) -> str:
         return self.name
@@ -73,4 +78,7 @@ class Departament(models.Model):
     class Meta:
         verbose_name = "Отделение"
         verbose_name_plural = "Отделении"
+
+
+
 
