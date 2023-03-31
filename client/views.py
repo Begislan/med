@@ -68,7 +68,7 @@ def DepartementViews(request):
 def det_view(request, pk):
     info = Departament.objects.all().filter(id = pk)
     inf = Departament.objects.all().filter(id=pk)
-    doctor = Doctor.objects.all().filter()
+    doctor = Doctor.objects.all().filter(id=pk)
     context = {
         'inf': inf,
         'info': info,

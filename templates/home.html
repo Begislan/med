@@ -10,22 +10,25 @@
   {% if user.is_authenticated %}
   <h3 class="display-6 fw-bold p-3">Добро пожаловать: {{user.first_name}} {{user.last_name}}!</h3>
   {% else %}
-    <p class="display-6 fw-bold p-3"> Наши услуги доступны после <a href="{% url 'signup' %}"> регистрации</a> или <a href="{% url 'login' %}"> авторизации</a></p>
+    <p class="display-6 p-3"> Наши услуги доступны после <a class="text-decoration-none" href="{% url 'signup' %}"> регистрации</a> или <a class="text-decoration-none" href="{% url 'login' %}"> авторизации</a></p>
   {% endif %}
 </div>
 
 
 <br>
-<div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+<div id="carouselExampleRide" class="carousel slide rounded" data-bs-ride="true">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://img.freepik.com/free-vector/hexagonal-style-medical-and-healthcare-banner_1017-26994.jpg?w=826&t=st=1678413177~exp=1678413777~hmac=de02dfb664725be6639c75832fcc88098f01d3c9fa111fbb4626465c1667524b" class="d-block w-100" alt="...">
+        <img src="{% static 'clin/3.jpeg' %}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://img.freepik.com/free-vector/hexagonal-style-medical-and-healthcare-banner_1017-26994.jpg?w=826&t=st=1678413177~exp=1678413777~hmac=de02dfb664725be6639c75832fcc88098f01d3c9fa111fbb4626465c1667524b" class="d-block w-100" alt="...">
+        <img src="{% static 'clin/2.jpeg' %}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://img.freepik.com/free-vector/hexagonal-style-medical-and-healthcare-banner_1017-26994.jpg?w=826&t=st=1678413177~exp=1678413777~hmac=de02dfb664725be6639c75832fcc88098f01d3c9fa111fbb4626465c1667524b" class="d-block w-100" alt="...">
+        <img src="{% static 'clin/1.jpeg' %}" class="d-block w-100" alt="...">
+      </div>
+        <div class="carousel-item">
+        <img src="{% static 'clin/4.jpeg' %}" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
@@ -37,10 +40,51 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+    <br>
+
+
+    <div class="container px-4 py-5 jumbotron bg-light" id="featured-3">
+    <h2 class="pb-2 border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Колонны с иконками</font></font></h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <img class="card-img-top" src="https://sun3-4.userapi.com/impg/FF0vSvf117sg8Z8B3c-iIwYquwYVkRyMddirWA/d7gFQmXn52Q.jpg?size=640x798&quality=95&sign=9a0118ffe36d142bd14925428b5a3f18&c_uniq_tag=7_Ybggb0M9j-yWLsqVWecewCyANEsUe7vZCrWgiV93o&type=album"></use></img>
+        </div>
+        <h3 class="fs-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Избранное название</font></font></h3>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Абзац текста под заголовком для пояснения заголовка. </font><font style="vertical-align: inherit;">Мы добавим к этому еще одно предложение и, возможно, просто продолжим, пока не закончатся слова.</font></font></p>
+        <a href="#" class="icon-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          Призыв к действию
+          </font></font><use xlink:href="#chevron-right"></use>
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <img class="card-img-top" src="https://sun3-22.userapi.com/impg/eQrONiGDAR5DSsXHAxyZaaM17jPigOe75igf1Q/XnP_5FNde4I.jpg?size=723x1073&quality=96&sign=e5e97a14ab7b1292246aecbe90983fea&c_uniq_tag=tXtw4FNvLWNTut9uidKvH7W0f9bjqy2U2p2iJvGtC5E&type=album"></use></img>
+        </div>
+        <h3 class="fs-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Избранное название</font></font></h3>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Абзац текста под заголовком для пояснения заголовка. </font><font style="vertical-align: inherit;">Мы добавим к этому еще одно предложение и, возможно, просто продолжим, пока не закончатся слова.</font></font></p>
+        <a href="#" class="icon-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          Призыв к действию
+          </font></font><use xlink:href="#chevron-right"></use>
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <img class="card-img-top" src="https://sun9-24.userapi.com/impg/ZMT8KqSmH8W2kIIR7xrIXBtqTTk6UzBVTi4Tzg/JLMOBn57opU.jpg?size=720x1080&quality=95&sign=6ff992f8546f049c8fc524906d94e8da&c_uniq_tag=D2bmJuI7tGcVWSvPgjSD6lobHJmQ6WGVRfNowOGraps&type=album"></use></img>
+        </div>
+        <h3 class="fs-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Избранное название</font></font></h3>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Абзац текста под заголовком для пояснения заголовка. </font><font style="vertical-align: inherit;">Мы добавим к этому еще одно предложение и, возможно, просто продолжим, пока не закончатся слова.</font></font></p>
+        <a href="#" class="icon-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          Призыв к действию
+          </font></font><use xlink:href="#chevron-right"></use>
+        </a>
+      </div>
+    </div>
+  </div>
 
 
 
-  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3">
     <div class="col">
       <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url(http://brand.oshsu.kg/img/brandlogo/img/logo2.jpg); background-size: cover;">
         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
@@ -108,50 +152,74 @@
 
 
 
-    <!-- <div class="jumbotron bg-light">
-        <h1 class="display-4">Ассолому алейкум</h1>
-        <p class="lead">Bayastan uulu Begislan</p>
-        <hr class="my-4">
-        <p>Это страница для ознокомление</p>
-        <p class="lead">
-            <a href="{% url 'article_list' %}" class="btn btn-outline-dark" role="button">Посмотреть посты</a>
-        </p>
-    </div>
-    <br> -->
+<div class="container marketing">
 
-    <div class="jumbotron bg-light">
-        <h3> Здесь будут основной информация клиника</h3>
-    </div>
-    <br>
+    <!-- Three columns of text below the carousel -->
+    <center><div class="row jumbotron bg-light">
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Заполнитель" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <h2 class="fw-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Заголовок</font></font></h2>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Некоторые репрезентативные заполнители для трех столбцов текста под каруселью. </font><font style="vertical-align: inherit;">Это первая колонка.</font></font></p>
+        <p><a class="btn btn-secondary" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Посмотреть детали "</font></font></a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Заполнитель" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <h2 class="fw-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Заголовок</font></font></h2>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Еще одна захватывающая часть репрезентативного контента-заполнителя. </font><font style="vertical-align: inherit;">На этот раз мы перешли ко второму столбцу.</font></font></p>
+        <p><a class="btn btn-secondary" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Посмотреть детали "</font></font></a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Заполнитель" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <h2 class="fw-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Заголовок</font></font></h2>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">И, наконец, третья колонка репрезентативного содержания-заполнителя.</font></font></p>
+        <p><a class="btn btn-secondary" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Посмотреть детали "</font></font></a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+</center>
 
-    <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">Функциональность сайта</h1>
-          <p class="col-md-8 fs-4">Кликайте и узнайте функции сайта</p>
-          <a href="{% url 'article_list' %}"><button class="btn btn-primary btn-lg" type="button">Подробнее</button></a>
-        </div>
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette jumbotron bg-light">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Заголовок первой короткометражки. </font></font><span class="text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Это сведет тебя с ума.</font></font></span></h2>
+        <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вот отличный заполнитель для первой короткометражки. </font><font style="vertical-align: inherit;">Представьте себе здесь захватывающую прозу.</font></font></p>
       </div>
-     
-
-      <div class="row align-items-md-stretch">
-        <div class="col-md-6">
-          <div class="h-100 p-5 text-bg-dark rounded-3">
-            <h2>Отделении</h2>
-            <p>Посмотреть все отделении</p>
-            <a href="{% url 'departament' %}" class="btn btn-outline-light" type="button">Посмотреть</a>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="h-100 p-5 bg-light border rounded-3">
-            <h2>Отзыв</h2>
-            <p>Оставьте мнении о сайте</p>
-            <button class="btn btn-outline-secondary" type="button">Оставить</button>
-          </div>
-        </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Заполнитель: 500&nbsp;x&nbsp;500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
       </div>
-<br>
+    </div>
 
+    <hr class="featurette-divider">
 
+    <div class="row featurette jumbotron bg-light">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">О да, это так хорошо. </font></font><span class="text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Посмотреть на себя.</font></font></span></h2>
+        <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Еще одна короткометражка? </font><font style="vertical-align: inherit;">Конечно. </font><font style="vertical-align: inherit;">Здесь больше заполнителей, чтобы дать вам представление о том, как этот макет будет работать с некоторым реальным контентом из реального мира.</font></font></p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Заполнитель: 500&nbsp;x&nbsp;500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette jumbotron bg-light">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">И, наконец, этот. </font></font><span class="text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мат.</font></font></span></h2>
+        <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">И да, это последний блок репрезентативного контента-заполнителя. </font><font style="vertical-align: inherit;">Опять же, на самом деле не предназначен для чтения, просто здесь, чтобы дать вам лучшее представление о том, как это будет выглядеть с некоторым реальным содержанием. </font><font style="vertical-align: inherit;">Ваш контент.</font></font></p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Заполнитель: 500&nbsp;x&nbsp;500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div>
 
    
      

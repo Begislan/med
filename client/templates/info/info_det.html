@@ -32,7 +32,7 @@
                         <h4 class="card-title">{{ el.name }}</h4>
                         <h4>{{ el.first_name }}</h4>
                         <h4>{{ el.phone }}</h4>
-                            <a href=""><button class="btn btn-info">Записатся на прием</button></a>
+                            <a href="{% url 'client_form' %}"><button class="btn btn-info">Записатся на прием</button></a>
                         </div>
                     {% endfor %}
                 </div>
