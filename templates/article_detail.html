@@ -1,13 +1,13 @@
-{% extends "base.html" %}
+{% extends "front/core.html" %}
 {% block title %}{% endblock %}
 {% block content %}
 <br>
-
-<div class="container-fluid">
+    <br><br><br><br><br>
+<div class="container">
     <div class="card">
 
         <div class="card-body">
-        <a class="btn btn-success mb-2" href="{% url 'article_list' %}">Назад</a>
+        <a class="btn btn-success mb-2" href="{% url 'core' %}">Назад</a>
             {% if object.photo %}
             <img class="card-img-top" src="{{ object.photo.url }}" alt="{{ object.title }}">
             {% endif %}
@@ -15,8 +15,7 @@
             <h6 class="card-subtitle mb-2 text-muted">Автор: {{ object.author }} | {{ object.date }}</h6>
             <p class="card-text">{{ object.body | safe }}</p>
             <a href="{% url 'article_edit' article.pk %}">Изменить</a> |
-            <a href="{% url 'article_delete' article.pk %}">Удалить</a> |
-            <a href="{% url 'article_list' %}">Все посты</a>
+            <a href="{% url 'article_delete' article.pk %}">Удалить</a>
         </div>
     </div>
 </div>

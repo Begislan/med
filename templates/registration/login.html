@@ -1,15 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'front/core.html' %}
 {% load crispy_forms_tags %}
 
 {% block title %}Вход{% endblock %}
 
 {% block content %}
+    <br><br><br><br><br>
+    <center>
+    <div class="form-control" style="max-width: 500px">
     <center><h2 class="">Вход в сайт</h2></center>
     <form action="" method="post" class=" form">
         {% csrf_token %}
         {{ form|crispy }}
         <input class="btn btn-info" type="submit" value="Вход"> 
         <a class="btn btn-danger" href="{% url 'password_reset' %}" role="button">Забыли пароль</a>
-        <a class="btn btn-outline-dark" href="{% url 'signup' %}" role="button">Регистрация</a>
+        <a class="btn btn-dark" href="{% url 'signup' %}" role="button">Регистрация</a>
     </form>
+    </div></center>
 {% endblock %}

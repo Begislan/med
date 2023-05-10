@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container">
+        <BR></BR>
+        <h1>История пациентов </h1>
+        <br>
+        <center>
+        <form class="d-flex" role="search"  method='post'>
+          {% csrf_token %}
+            <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search" style="max-width: 40%;" name="question">
+            <button class="btn btn-success" type="submit">Поиск пациента</button>
+        </form>
+        </center>
+        <br>
+        <table class="table text-light  border">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Ф.И.О</th>
+                <th scope="col">Отделение</th>
+                <th scope="col">Дата</th>
+              </tr>
+            </thead>
+            <tbody>
+                {%for history in object_list%}
+              <tr>
+                <th scope="row">{{ history.id }}</th>
+                <td><a href="/client/history_list/{{ history.id }}">{{history.patient}}</a></td>
+                <td>{{history.dep}}</td>
+                <td>{{history.data_time}}</td>
+              </tr>
+                {%endfor%}
+            </tbody>
+          </table>
+
+
+    </div>
+{% endblock %}

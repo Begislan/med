@@ -19,3 +19,5 @@ admin.site.register(Departament, DepartamentAdmin)
 
 
 admin.site.register(Post)
+admin.site.register(Diognoz)
+admin.site.register(History)

@@ -1,7 +1,9 @@
-{% extends "base.html" %}
+{% extends "front/core.html" %}
 {% load crispy_forms_tags %}
 
 {% block content %}
+    <br><br><br><br><br>
+    <div class="container">
     <h1>Новый пост</h1>
     <form method="post" class="form" enctype="multipart/form-data">
         {% csrf_token %}
@@ -9,4 +11,5 @@
         {{ form|crispy }}
         <button class="btn btn-info ml-2">Сохранить</button>
     </form>
+    </div>
 {% endblock %}

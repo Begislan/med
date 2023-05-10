@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'articles.apps.ArticlesConfig',
     'client.apps.ClientConfig',
     "phonenumber_field",
+    'front.apps.FrontConfig',
 
 ]
 
@@ -127,8 +128,8 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'core'
+LOGOUT_REDIRECT_URL = 'core'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 

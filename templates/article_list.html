@@ -3,30 +3,32 @@
 {% block title %}Посты{% endblock %}
 
 {% block content %}
-  <br>
+    <br>
     {% for article in object_list %}
-    <center>    
-    <div class="card" style="width: 80%;">
+        <center>
+        <div class="card" style="width: 80%;">
             <div class="card-header">
                 <span class="font-weigh-bold">
-                    <a class="aaa" href="{% url 'article_detail' article.pk %}"><h2>{{ article.title }}</h2></a>
+                    <a class="aaa" href="{% url 'article_detail' article.pk %}">
+                        <h2>{{ article.title }}</h2></a>
                 </span>
             </div>
             {% if article.photo %}
                 <img class="card-img-top imm" src="{{ article.photo.url }}" alt="{{ article.title }}">
             {% endif %}
+            
             <div class="card-body">
                 {{ article.summary }}...<a href="{% url 'article_detail' article.pk %}">Подробнее</a>
             </div>
             <div class="card-footer text-left text-muted">
                 <span class="text-muted">Автор: {{ article.author | title }} {{ article.date }}
                 </span>
-            </div>
-            <br> </div>
+            </div> 
+            <br></div>
         <br>
-            {% endfor %}
-            
-    </center>
-    
+    {% endfor %}
+
+</center>
+
 
 {% endblock %}

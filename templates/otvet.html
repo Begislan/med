@@ -1,7 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'front/core.html' %}
 {% block title %}{% endblock %}
 
 {% block content %}
-    <h1 class="">Спасибо, вы записались в очеред </h1>
-    <a class="btn btn-warning" href="{% url 'home' %}">На главную</a>
+    <br><br><br><br><br>
+    <div class="container">
+    <h1 class="">Спасибо, вы записались в прием</h1>
+    <a class="btn btn-warning" href="{% url 'core' %}">На главную</a>
+    </div>
 {% endblock %}

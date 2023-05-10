@@ -1,0 +1,33 @@
+{% extends "front/core.html" %}
+{% block title %}Отделение{% endblock %}
+
+{% block content %}
+    <br><br><br><br><br><br>
+    <div class="container">
+
+    {% for i in info %}
+        <p class="">{{ i.name }}</p>
+        {% if object.photo %}
+            <img class="" src="{{ object.photo.url }}" alt="{{ object.title }}">
+        {% endif %}
+        {{ i.info|safe }}
+    {% endfor %}
+
+
+     <h3>Наши врачи</h3>
+            <div class="row">
+                <div class="col-md-4 card">
+                    {% for el in doc %}
+                        <img class="card-img-top rounded mt-3" src="{{ el.img.url }}" alt="{{ el.name }}">
+                        <div class="card-body">
+                        <h4 class="card-title">{{ el.name }}</h4>
+                        <h4>{{ el.first_name }}</h4>
+                        <h4>{{ el.phone }}</h4>
+                            <a href="{% url 'client_form' %}"><button class="btn btn-info">Записатся на прием</button></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <br>
+    </div>
+{% endblock %}

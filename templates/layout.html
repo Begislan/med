@@ -25,9 +25,13 @@
           <nav class="nav nav-masthead justify-content-center float-md-end">
             <a style="margin-right: 5px;" class="btn btn-outline-light" href="{% url 'client' %}">Админ Главная</a>
             <!-- <a class="btn btn-outline-dark" href="{% url 'new' %}">Клиент</a> -->
-            <a style="margin-right: 5px;" class="btn btn-outline-light" href="{% url 'doctor' %}">Очеред</a>
+            <a style="margin-right: 5px;" class="btn btn-outline-light" href="{% url 'doctor' %}">Пациенты региртрированные</a>
             <a style="margin-right: 5px;" class="btn btn-outline-light" href="{% url 'index' %}">Добавить пост</a>
-            <a style="margin-right: 5px;" class="btn btn-warning" href="{% url 'home' %}">На главную</a>
+            <a style="margin-right: 5px;" class="btn btn-outline-light" href="{% url 'history_form' %}">Заполнить история пациентов</a>
+            <a style="margin-right: 5px;" class="btn btn-outline-light" href="{% url 'history' %}">обший история пациентов</a>
+
+            <a style="margin-right: 5px;" class="btn btn-warning" href="{% url 'core' %}">На главную</a>
+            
           </nav>
         </div>
       </header>

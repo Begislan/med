@@ -15,14 +15,14 @@ class Client(models.Model):
     name = models.CharField(max_length=50, verbose_name="Имя")
     sourname = models.CharField(max_length=250, verbose_name="Фамилия")
     phone = PhoneNumberField(unique=True, verbose_name='Телефон номер', default="+996")
-    region = models.ForeignKey('Region', on_delete=models.CASCADE, verbose_name="Регион")
+    region = models.ForeignKey('Region', on_delete=models.CASCADE, verbose_name="Регион", default=1)
     doctor = models.ForeignKey('Doctor', on_delete=models.SET_NULL, null=True, verbose_name="Врач")
     female = models.CharField(max_length=1, choices=FEMALE_CHOICES, verbose_name="Пол")
     date = models.DateField(auto_now_add=True)
     time = models.TimeField(auto_now_add=True)
 
     def __str__(self) -> str:
-        return self.name
+        return f"{self.name} {self.sourname}"
 
     class Meta:
         verbose_name = "Клиент"
@@ -81,4 +81,21 @@ class Departament(models.Model):
 
 
 
+class Diognoz(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self) -> str:
+        return self.name
+
+class History(models.Model):
+    patient = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name="Пациент")
+    region = models.ForeignKey(Region, on_delete=models.SET_NULL, null=True, verbose_name="Регион")
+    doctor = models.ForeignKey(Doctor, on_delete=models.SET_NULL, null=True, verbose_name="Врач")
+    dep = models.ForeignKey(Departament, on_delete=models.SET_NULL, null=True, verbose_name="Отделения")
+    diognoz = models.ForeignKey(Diognoz, on_delete=models.SET_NULL, null=True, verbose_name="Диогноз")
+    description = models.TextField(verbose_name="Описание")
+    data_time = models.DateTimeField(auto_now=True)
+
+    def __str__(self) -> str:
+        return self.patient
 

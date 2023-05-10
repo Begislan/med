@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <br><br>
+    <div class="rounded border p-4">
+
+        {%for history in h%}
+        <h3>Имя пациент: {{ history.patient }}</h3>
+        <h4>Регион: {{ history.region }}</h4>
+        <h4>Врач: {{ history.doctor }}</h4>
+        <h4>Отделение: {{ history.dep }}</h4>
+        <h4>Диогноз: {{ history.diognoz }}</h4>
+        <h4>Описание: {{ history.description }}</h4>
+        <h4>Дата изменение: {{ history.data_time }}</h4>
+        <button class="btn btn-warning "><a href=""></a>Печать</button>
+        
+        {%endfor%}
+
+    </div>
+</div>
+
+{% endblock %}

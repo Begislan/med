@@ -1,13 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'front/core.html' %}
 {% load crispy_forms_tags %}
 
 {% block title %}Регистрация{% endblock %}
 
 {% block content %}
+    <br><br><br><br><br>
+    <center>
+    <div class="form-control" style="max-width: 500px">
     <center><h2 class="">Регистрация</h2></center>
     <form method="post" class="form">{% csrf_token %}
         {{ form|crispy }}
         <input class="btn btn-warning" type="submit" value="Регистрация">
         <a class="btn btn-outline-dark" href="{% url 'login' %}" role="button">Вход</a>  
     </form>
+    </div></center>
 {% endblock %}
